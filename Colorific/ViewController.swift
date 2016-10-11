@@ -32,24 +32,19 @@ class ViewController: UIViewController {
         // Create Color
         let color = UIColor(red: (r/255.0), green: (g/255.0), blue: (b/255.0), alpha: 1.0)
         
-        // Check if color is too dark to use black text
-        if r + g + b < 300 {
-            randomColor.setTitleColor(.whiteColor(), forState: .Normal)
-            whiteButton.setTitleColor(.whiteColor(), forState: .Normal)
-            blackButton.setTitleColor(.whiteColor(), forState: .Normal)
-        } else {
-            randomColor.setTitleColor(.blackColor(), forState: .Normal)
-            whiteButton.setTitleColor(.blackColor(), forState: .Normal)
-            blackButton.setTitleColor(.blackColor(), forState: .Normal)            
-        }
+        // Correct text colors
+        changeText(r, g: g, b: b)
         
         // Update View
         view.backgroundColor = color
     }
     
     @IBAction func makeWhite(sender: UIButton) {
+        let colMax: CGFloat = 255
         // Create Color
-        let color = UIColor(red: 255, green: 255, blue: 255, alpha: 1.0)
+        let color = UIColor(red: colMax, green: colMax, blue: colMax, alpha: 1.0)
+        // Correct text colors
+        changeText(colMax, g: colMax, b: colMax)
         // Update View
         view.backgroundColor = color
     }
@@ -57,9 +52,22 @@ class ViewController: UIViewController {
     @IBAction func makeBlack(sender: UIButton) {
         // Create Color
         let color = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0)
+        // Correct text colors
+        changeText(0, g: 0, b: 0)
         // Update View
         view.backgroundColor = color
     }
     
+    func changeText(r: CGFloat, g: CGFloat, b: CGFloat) {
+        if r + g + b < 300 {
+            randomColor.setTitleColor(.whiteColor(), forState: .Normal)
+            whiteButton.setTitleColor(.whiteColor(), forState: .Normal)
+            blackButton.setTitleColor(.whiteColor(), forState: .Normal)
+        } else {
+            randomColor.setTitleColor(.blackColor(), forState: .Normal)
+            whiteButton.setTitleColor(.blackColor(), forState: .Normal)
+            blackButton.setTitleColor(.blackColor(), forState: .Normal)
+        }
+    }
 }
 
