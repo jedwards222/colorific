@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Colorific" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,64 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o1X-lI-TBn">
+                                <rect key="frame" x="0.0" y="80" width="600" height="520"/>
+                                <state key="normal" title="Tap to Change Color">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pxf-ws-l1b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9xo-7e-gbk">
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="81"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="P4n-X8-gYJ"/>
+                                </constraints>
+                                <state key="normal" title="Tap here for White!">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="makeWhite:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZuL-tS-bAT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJM-M5-zEt">
+                                <rect key="frame" x="400" y="-1" width="200" height="82"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="RKS-l7-8Hs"/>
+                                </constraints>
+                                <state key="normal" title="Tap here for Black!">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="makeBlack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RUD-ga-AS0"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="o1X-lI-TBn" firstAttribute="trailing" secondItem="TJM-M5-zEt" secondAttribute="trailing" id="2Xb-LJ-jB0"/>
+                            <constraint firstItem="o1X-lI-TBn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="3T4-O2-qEW"/>
+                            <constraint firstItem="TJM-M5-zEt" firstAttribute="bottom" secondItem="9xo-7e-gbk" secondAttribute="bottom" id="Anj-fn-C6K"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9xo-7e-gbk" secondAttribute="bottom" constant="519" id="Baw-hs-3kU"/>
+                            <constraint firstItem="9xo-7e-gbk" firstAttribute="leading" secondItem="o1X-lI-TBn" secondAttribute="leading" id="Ivw-bu-AzO"/>
+                            <constraint firstAttribute="trailing" secondItem="o1X-lI-TBn" secondAttribute="trailing" id="QY3-0D-Mj9"/>
+                            <constraint firstItem="9xo-7e-gbk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="idz-Tv-lcJ"/>
+                            <constraint firstItem="TJM-M5-zEt" firstAttribute="centerY" secondItem="9xo-7e-gbk" secondAttribute="centerY" id="tmS-qS-ThN"/>
+                            <constraint firstItem="o1X-lI-TBn" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="uld-61-J19"/>
+                            <constraint firstItem="9xo-7e-gbk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="y4B-XB-YxS"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="blackButton" destination="TJM-M5-zEt" id="QhP-cw-0Nb"/>
+                        <outlet property="randomColor" destination="o1X-lI-TBn" id="KhT-rF-oGF"/>
+                        <outlet property="whiteButton" destination="9xo-7e-gbk" id="VTZ-61-lyR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="465" y="289"/>
         </scene>
     </scenes>
 </document>
