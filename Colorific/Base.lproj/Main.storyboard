@@ -35,7 +35,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="makeWhite:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZuL-tS-bAT"/>
+                                    <action selector="changeColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aJ1-Rz-3yU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJM-M5-zEt">
@@ -47,7 +47,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="makeBlack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RUD-ga-AS0"/>
+                                    <action selector="changeColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jdp-0j-xv4"/>
                                 </connections>
                             </button>
                         </subviews>

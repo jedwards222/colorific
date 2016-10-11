@@ -24,10 +24,19 @@ class ViewController: UIViewController {
     }
 
     @IBAction func changeColor(sender: UIButton) {
-        // Generate Random Numbers
-        let r = CGFloat(arc4random() % 255)
-        let g = CGFloat(arc4random() % 255)
-        let b = CGFloat(arc4random() % 255)
+        var r: CGFloat = 0
+        var g: CGFloat = 0
+        var b: CGFloat = 0
+        if sender.isEqual(randomColor) {
+            // Generate Random Numbers
+            r = CGFloat(arc4random() % 255)
+            g = CGFloat(arc4random() % 255)
+            b = CGFloat(arc4random() % 255)
+        } else if sender.isEqual(whiteButton) {
+            r = 255
+            g = 255
+            b = 255
+        }
         
         // Create Color
         let color = UIColor(red: (r/255.0), green: (g/255.0), blue: (b/255.0), alpha: 1.0)
@@ -35,25 +44,6 @@ class ViewController: UIViewController {
         // Correct text colors
         changeText(r, g: g, b: b)
         
-        // Update View
-        view.backgroundColor = color
-    }
-    
-    @IBAction func makeWhite(sender: UIButton) {
-        let colMax: CGFloat = 255
-        // Create Color
-        let color = UIColor(red: colMax, green: colMax, blue: colMax, alpha: 1.0)
-        // Correct text colors
-        changeText(colMax, g: colMax, b: colMax)
-        // Update View
-        view.backgroundColor = color
-    }
-    
-    @IBAction func makeBlack(sender: UIButton) {
-        // Create Color
-        let color = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0)
-        // Correct text colors
-        changeText(0, g: 0, b: 0)
         // Update View
         view.backgroundColor = color
     }
@@ -67,6 +57,7 @@ class ViewController: UIViewController {
             randomColor.setTitleColor(.blackColor(), forState: .Normal)
             whiteButton.setTitleColor(.blackColor(), forState: .Normal)
             blackButton.setTitleColor(.blackColor(), forState: .Normal)
+
         }
     }
 }
